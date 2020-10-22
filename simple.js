@@ -205,6 +205,16 @@ $(document).ready(function(){
 		
 		let profit = (Number ($('.table__td_revenue1').text()) - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val()));
 		$('#Profit').text("р. "+ profit );
+			if (profit<0){
+				$('.benefit').removeClass('common-data__th_benefit');
+				$('.benefit').removeClass('common-data__td_not-profit');
+				$('.benefit').addClass('common-data__td_not-profit');
+			}
+			else {
+				$('.benefit').removeClass('common-data__th_benefit');
+				$('.benefit').removeClass('common-data__td_not-profit');
+				$('.benefit').addClass('common-data__th_benefit');
+			}
 
 		let Gross_Profit = (Number ($('.table__td_revenue1').text()) - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val()) - Number($('#fix-cogs').val())); 
 		$('#Gross_Profit').text("р. "+ Gross_Profit);
@@ -220,8 +230,11 @@ $(document).ready(function(){
 
 		$('#CCPU').text("р. "+ Number($('#marketing-budget').val())/Number ($('.table__td_pay1').text()));
 
-		let Marg = Number($('#average-cost-avp').val()) -  Number($('#cogs').val());
-		$('#Margin').text("р. "+ Marg);
+		let client = Number($('#click-count').val()) * (Number($('#conversion-transit-trial').val()/100))* (Number($('#conversion-trial-payment').val()/100));
+		$('#Count_of_clients').text(client);
+		
+		let Marg = (Number($('#average-cost-avp').val()) - (Number($('#provision-payment').val())/client) - Number($('#cogs').val())) / Number($('#average-cost-avp').val()) * 100;
+		$('#Marg').text(Marg.toFixed(2) + "%");
 
 		let Count_of_vision = Number($('#marketing-budget').val()) / Number($('#cpm').val()) * 1000;
 		$('#Count_of_vision').text(Count_of_vision);
@@ -229,19 +242,17 @@ $(document).ready(function(){
 		let leads = Number($('#click-count').val()) * (Number($('#conversion-transit-trial').val()/100));
 		$('#Count_of_leads').text(leads);
 
-		let client = Number($('#click-count').val()) * (Number($('#conversion-transit-trial').val()/100))* (Number($('#conversion-trial-payment').val()/100));
-		$('#Count_of_clients').text(client);
 
 		let CPA = Number($('#marketing-budget').val()) / leads;
 		$('#CPA').text("р. "+CPA);
 
 		let ROMI = (Number ($('.table__td_revenue1').text()) - (Number($('#marketing-budget').val()))) / Number($('#marketing-budget').val()) * 100;
-		$('#ROMI').text(ROMI.toFixed(3) + " %");
+		$('#ROMI').text(ROMI.toFixed(2) + " %");
 
 		let CPC = Number($('#marketing-budget').val()) / Number($('#click-count').val());
 		$('#Count_of_click').text(CPC);
 
-		let PPPU = - ((CPC / (Number($('#conversion-transit-trial').val()/100))/(Number($('#conversion-trial-payment').val()/100)))-(Marg-(Number($('#provision-payment').val())/client)));
+		let PPPU = - (CPC / (Number($('#conversion-transit-trial').val()/100))/(Number($('#conversion-trial-payment').val()/100))) + (Number($('#average-cost-avp').val()) - (Number($('#provision-payment').val())/client) - Number($('#cogs').val()));
 		$('#PPPU').text("р. "+PPPU);
 	});
 })

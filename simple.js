@@ -235,7 +235,7 @@ $(document).ready(function(){
 		let CPA = Number($('#marketing-budget').val()) / leads;
 		$('#CPA').text("р. "+CPA);
 
-		let ROMI = (Number ($('.table__td_revenue1').text()) - (Number($('#cogs').val())+Number($('#marketing-budget').val())+(Number($('#cogs').val())*client))) / Number($('#marketing-budget').val());
+		let ROMI = (Number ($('.table__td_revenue1').text()) - (Number($('#marketing-budget').val()) / Number($('#marketing-budget').val()) * 100;
 		$('#ROMI').text(ROMI.toFixed(3) + " %");
 
 		let CPC = Number($('#marketing-budget').val()) / Number($('#click-count').val());

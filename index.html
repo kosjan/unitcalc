@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unitcalc</title>
+<link href="app.2c2aeeba109374f56f1d.css" rel="stylesheet"></head>
+<body>
+<header class="header">
+    <div class="container">
+
+        <div class="header__top">
+            <h1 class="header__title">
+                UNITCALC
+            </h1>
+            <span class="header__subtitle">
+                Сервис расчета unit-экономики для вашего стартапа или бизнеса
+            </span>
+        </div>
+
+        <div class="header__nav header-nav">
+            <div class="header-nav__sub-nav">
+                <a class="header-nav__item" href="#">Расчет</a>
+                <a class="header-nav__item" href="./handbook.html">Справочник</a>
+            </div>
+            <div class="header-nav__main-nav">
+                <a class="header-nav__item header-nav__item_active" href="#">Сервис с подпиской</a>
+                <a class="header-nav__item" href="#">Онлайн-магазин</a>
+                <a class="header-nav__item" href="#">Торговая точка</a>
+                <a class="header-nav__item" href="#">Мобильное приложение</a>
+            </div>
+            <div class="header-nav__sub-nav">
+                <a class="header-nav__item header-nav__item_active" href="#">Сложно</a>
+                <a class="header-nav__item" href="./simple.html">Просто</a>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="header__hr">
+
+</header>
+
+<main class="main__index" data-complex-calc="true">
+    <div class="container">
+        <button class="put-demo-data">Заполнить демо-данными</button>
+        <div class="transcript-wrap">
+            <div class="transcript CAC__transcript">
+                <p>CAC = Все затраты на привлечение нового клиента / Количество новых клиентов = <span class="transcript__benefit">р. 842</span></p>
+            </div>
+
+            <p class="CAC-preview__info transcript__info">
+                Сначала необходимо определить сколько мы тратим денег на привлечение одного платящего клиента.
+                <br>
+                Эта метрика называется <span>CAC (Customer Acquisition Cost)</span>. В форме ниже
+                внесите те данные, которые вам известны.<br>
+                Остальное сервис постарается посчитать сам или не учтёт.
+            </p>
+        </div>
+        <form class="main-form" action="">
+            <div class="CAC">
+                <div class="CAC-form main-form__CAC">
+                    <div class="CAC-form__main">
+                        <div class="CAC-form__spread">
+                            <div class="main-form__row">
+                                <div class="main-form__item main-form__item_require">
+                                    <label for="customer-count">Количество клиентов:</label>
+                                    <input class="main-form__input" id="customer-count" type="text" name="customer-count" placeholder="2500">
+                                    <span class="main-form__input-info">
+                                    Сколько новых клиентов пришло к нам с рекламы
+                                </span>
+                                </div>
+                                <div class="main-form__item main-form__item_require">
+                                    <label for="marketing-budget">Рекламный бюджет:</label>
+                                    <input class="main-form__input" id="marketing-budget" type="text" name="marketing-budget" placeholder="р. 200 000">
+                                    <span class="main-form__input-info">
+                                    Сколько денег тратим на рекламу
+                                </span>
+                                </div>
+                                <div class="main-form__item main-form__item_require">
+                                    <label for="cost-per-1000">Цена за 1000 показов:</label>
+                                    <input class="main-form__input" id="cost-per-1000" type="text" name="cost-per-1000" placeholder="р. 80">
+                                    <span class="main-form__input-info">
+                                    Стоимость 1000 показов рекламы
+                                </span>
+                                </div>
+                            </div>
+                            <div class="main-form__row">
+                                <div class="main-form__item">
+                                    <label for="conversion-shows-clicks">Конверсия показы/клики:</label>
+                                    <input class="main-form__input" id="conversion-shows-clicks" type="text" name="conversion-shows-clicks" placeholder="1%">
+                                    <span class="main-form__input-info">
+                                    Сколько % кликает по рекламе и переходит на сайт
+                                </span>
+                                </div>
+                                <div class="main-form__item">
+                                    <label for="conversion-clicks-regs">Конверсия клики/регистрации:</label>
+                                    <input class="main-form__input" id="conversion-clicks-regs" type="text" name="conversion-clicks-regs" placeholder="10%">
+                                    <span class="main-form__input-info">
+                                    Сколько % регистрируется на сайте
+                                </span>
+                                </div>
+                                <div class="main-form__item main-form__item_require">
+                                    <label for="clicks-count">Количество кликов:</label>
+                                    <input class="main-form__input" id="clicks-count" type="text" name="clicks-count" placeholder="25 000">
+                                    <span class="main-form__input-info">
+                                    Сколько всего человек кликнули по рекламе
+                                </span>
+                                </div>
+                            </div>
+                            <div class="main-form__row">
+                                <div class="main-form__item">
+                                    <label for="conversion-reg-trial">Конверсия регистрации/триал:</label>
+                                    <input class="main-form__input" id="conversion-reg-trial" type="text" name="conversion-reg-trial" placeholder="100%">
+                                    <span class="main-form__input-info">
+                                    Оставьте 100%, если у вас регистрации = оформлению триала
+                                </span>
+                                </div>
+                                <div class="main-form__item">
+                                    <label for="conversion-trial-tariff">Конверсия триал/покупка тарифа:</label>
+                                    <input class="main-form__input" id="conversion-trial-tariff" type="text" name="conversion-trial-tariff" placeholder="15%">
+                                    <span class="main-form__input-info">
+                                    Сколько %, оформивших триал покупают месячный тариф
+                                </span>
+                                </div>
+                                <div class="main-form__item main-form__item_require">
+                                    <label for="cost-click">Стоимость клика:</label>
+                                    <input class="main-form__input" type="text" id="cost-click" name="cost-click" placeholder="р. 8">
+                                    <span class="main-form__input-info">
+                                    Цена одного клика по рекламе
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="CAC-form__table main-form__table" data-table="marketing">
+                            <span class="main-form__table-title">Отдел маркетинга:</span>
+                            <div class="main-form__new-row" data-new-row="true">
+                                <button data-new-personal="true" data-personal="marketing">+</button>
+                                <span> Нажмите и добавьте сотрудника</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CAC-form__sub">
+                        <p class="CAC-form__retention-info">
+                            <span>Retention</span> - это какой процент пользователей осталось с нами в следующем периоде
+                            от
+                            тех, кого мы привлекли вначале
+                        </p>
+                        <span class="CAC-form__retention-example">
+                        Например Retention 0 - это январь, а Retention 11 - это декабрь. В январе было 100 клиентов, в феврале вернулось 70, в марте тоже 70, а в апреле 60
+                    </span>
+                        <div class="CAC-form__retention-list">
+                            <div class="CAC-form__retention-item">
+                                <label for="retention0">Retention 0:</label>
+                                <input class="main-form__input" id="retention0" name="retention0" type="text" placeholder="100%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention1">Retention 1:</label>
+                                <input class="main-form__input" id="retention1" name="retention1" type="text" placeholder="70%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention2">Retention 2:</label>
+                                <input class="main-form__input" id="retention2" name="retention2" type="text" placeholder="70%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention3">Retention 3:</label>
+                                <input class="main-form__input" id="retention3" name="retention3" type="text" placeholder="60%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention4">Retention 4:</label>
+                                <input class="main-form__input" id="retention4" name="retention4" type="text" placeholder="50%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention5">Retention 5:</label>
+                                <input class="main-form__input" id="retention5" name="retention5" type="text" placeholder="50%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention6">Retention 6:</label>
+                                <input class="main-form__input" id="retention6" name="retention6" type="text" placeholder="30%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention7">Retention 7:</label>
+                                <input class="main-form__input" id="retention7" name="retention7" type="text" placeholder="30%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention8">Retention 8:</label>
+                                <input class="main-form__input" id="retention8" name="retention8" type="text" placeholder="30%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention9">Retention 9:</label>
+                                <input class="main-form__input" id="retention9" name="retention9" type="text" placeholder="20%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention10">Retention 10:</label>
+                                <input class="main-form__input" id="retention10" name="retention10" type="text" placeholder="20%">
+                            </div>
+                            <div class="CAC-form__retention-item">
+                                <label for="retention11">Retention 11:</label>
+                                <input class="main-form__input" id="retention11" name="retention11" type="text" placeholder="10%">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="main-form__hr">
+                </div>
+            </div>
+            <div class="COGS">
+                <div class="COGS__preview COGS-preview">
+                    <div class="transcript COGS__transcript">
+                        <p>COGS = Себестоимость + доставка + упаковка + пр.расходы = <span class="transcript__benefit">р. 1352</span>
+                        </p>
+                    </div>
+                    <p class="transcript__info">
+                        Теперь необходимо посчитать все переменные затраты, без которых не сможет состояться продажа.
+                        <br>
+                        <span> Cost of Goods Sold </span> - средние затраты на 1 продажу (себестоимость товара, затраты
+                        на упаковку, доставку и тд) без учета затрат на привлечение.<br>
+                        В форме ниже внесите те данные, которые вам известны. Остальное сервис постарается посчитать сам
+                        или не учтёт.
+                    </p>
+                </div>
+                <div class="COGS-form main-form__COGS">
+                    <div class="COGS-form__spread">
+                        <div class="main-form__row">
+                            <div class="main-form__item main-form__item_require">
+                                <label for="average-cost">Средний чек:</label>
+                                <input class="main-form__input" id="average-cost" type="text" name="average-cost" placeholder="2500">
+                                <span class="main-form__input-info">
+                                    Средний чек (AvP) - это сумма всех покупок делённая на их количество
+                                </span>
+                            </div>
+                            <div class="main-form__item">
+                                <label for="payment-commission">Комиссия платежной системы:</label>
+                                <input class="main-form__input" id="payment-commission" type="text" name="payment-commission" placeholder="3%">
+                                <span class="main-form__input-info">
+                                    Эквайринг, терминал оплаты, онлайн-посредник
+                                </span>
+                            </div>
+                            <div class="main-form__item">
+                                <label for="logistic">Логистика:</label>
+                                <input class="main-form__input" id="logistic" type="text" name="logistic" placeholder="р. 0">
+                                <span class="main-form__input-info">
+                                    Доставка одного заказа
+                                </span>
+                            </div>
+                        </div>
+                        <div class="main-form__row">
+                            <div class="main-form__item main-form__item_require">
+                                <label for="production-cost">Себестоимость:</label>
+                                <input class="main-form__input" id="production-cost" type="text" name="production-cost" placeholder="р. 0">
+                                <span class="main-form__input-info">
+                                    Затраты на производство товара, его закупку. Не включают разработку ПО
+                                </span>
+                            </div>
+                            <div class="main-form__item main-form__item_require">
+                                <label for="commission-apple-google">Комиссия Apple или Google:</label>
+                                <input class="main-form__input" id="commission-apple-google" type="text" name="commission-apple-google" placeholder="30%">
+                                <span class="main-form__input-info">
+                                    Платеж за покупки. Сделать 0, если мы им не платим
+                                </span>
+                            </div>
+                            <div class="main-form__item">
+                                <label for="manager-salary">Зарплата менеджера:</label>
+                                <input class="main-form__input" id="manager-salary" type="text" name="manager-salary" placeholder="р. 30 000">
+                                <span class="main-form__input-info">
+                                    Зарплата специалиста без учета налогов
+                                </span>
+                            </div>
+                        </div>
+                        <div class="main-form__row">
+                            <div class="main-form__item main-form__item_require">
+                                <label for="tax">Налог:</label>
+                                <input class="main-form__input" id="tax" type="text" name="tax" placeholder="6%">
+                                <span class="main-form__input-info">
+                                    % от всех пришедших на р/с денег
+                                </span>
+                            </div>
+                            <div class="main-form__item">
+                                <label for="client-per-manager">Клиентов на менеджера в день:</label>
+                                <input class="main-form__input" id="client-per-manager" type="text" name="client-per-manager" placeholder="30%">
+                                <span class="main-form__input-info">
+                                    Сколько клиентов может за день обработать один менеджер.
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="COGS-form__table main-form__table" data-table="additional-spending">
+                        <span class="main-form__table-title">Дополнительные расходы:</span>
+                        <div class="main-form__new-row" data-new-row="true">
+                            <button data-new-personal="true" data-personal="additional-spending">+</button>
+                            <span> Нажмите и добавьте сотрудника</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="main-form__hr">
+            </div>
+            <div class="expenses">
+                <div class="expenses__preview expenses-preview">
+                    <div class="transcript expenses__transcript">
+                        <p>Expenses = Постоянные расходы бизнеса = <span class="transcript__benefit">р. 1 752 000</span>
+                        </p>
+                    </div>
+                    <p class="transcript__info">
+                        На этом этапе считаем постоянные расходы <span>Fix COGS или Expenses</span> - Постоянные расходы
+                        бизнеса. <br>
+                        Издержки, которые необходимо нести в любом случае. Сюда относятся фонд оплаты труда, аренда
+                        офиса и т.д. <br>
+                        В форме ниже внесите те данные, которые вам известны. Остальное сервис постарается посчитать сам
+                        или не учтёт
+                    </p>
+                </div>
+                <div class="expenses-form main-form__expenses">
+                    <div class="expenses__main">
+                        <div class="expenses__row">
+                            <div class="expenses__spread">
+                                <div class="main-form__row">
+                                    <div class="main-form__item">
+                                        <label for="office-rent">Аренда офиса:</label>
+                                        <input class="main-form__input" id="office-rent" type="text" name="office-rent" placeholder="р. 100 000">
+                                        <span class="main-form__input-info">
+                                    Затраты на аренду офиса
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="main-form__row">
+                                    <div class="main-form__item">
+                                        <label for="communal-payment">Коммунальные платежи::</label>
+                                        <input class="main-form__input" id="communal-payment" type="text" name="communal-payment" placeholder="р. 35 000">
+                                        <span class="main-form__input-info">
+                                    Оплата коммунальных платежей в офисе
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="main-form__row">
+                                    <div class="main-form__item">
+                                        <label for="other-expense">Прочие расходы в офисе:</label>
+                                        <input class="main-form__input" id="other-expense" type="text" name="other-expense" placeholder="р. 15 000">
+                                        <span class="main-form__input-info">
+                                    Бумага, конверты, печеньки
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="expenses__table-list">
+                                <div class="main-form__table expenses-table" data-table="clerking">
+                                    <span class="main-form__table-title">Бухгалтерия:</span>
+                                    <div class="main-form__new-row" data-new-row="true">
+                                        <button data-new-personal="true" data-personal="clerking">+</button>
+                                        <span> Нажмите и добавьте сотрудника</span>
+                                    </div>
+                                </div>
+                                <div class="main-form__table expenses-table" data-table="management">
+                                    <span class="main-form__table-title">Управление и руководство:</span>
+                                    <div class="main-form__new-row" data-new-row="true">
+                                        <button data-new-personal="true" data-personal="management">+</button>
+                                        <span> Нажмите и добавьте сотрудника</span>
+                                    </div>
+                                </div>
+                                <div class="main-form__table expenses-table" data-table="dev">
+                                    <span class="main-form__table-title">Разработка:</span>
+                                    <div class="main-form__new-row" data-new-row="true">
+                                        <button data-new-personal="true" data-personal="dev">+</button>
+                                        <span> Нажмите и добавьте сотрудника</span>
+                                    </div>
+                                </div>
+                                <div class="main-form__table expenses-table" data-table="support">
+                                    <span class="main-form__table-title">Поддержка:</span>
+                                    <div class="main-form__new-row" data-new-row="true">
+                                        <button data-new-personal="true" data-personal="support">+</button>
+                                        <span> Нажмите и добавьте сотрудника</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr class="main-form__hr">
+            </div>
+        </form>
+        <button class="main-form__submit" type="submit">Расчитать экономику</button>
+
+        <div class="complex hidden">
+            <div class="complex__preview">
+                <p>Ваша unit-экономика расчитана из введенных данных. На их основе подготовлены
+                    рекомендации по улучшению экономики</p>
+                <a href="#">Перейти к рекомендациями</a>
+            </div>
+            <div class="complex__table-list">
+                <div class="table-ref">
+                    <button class="button-share">
+                        <img src="./img/share.svg" alt="">
+                    </button>
+                    <button class="button-download">
+                        <img src="./img/download.svg" alt="">
+                    </button>
+                </div>
+                <div class="simple__common-data">
+                    <span class="table__title">Общие данные по экономике:</span>
+                    <table class="common-data">
+                        <tr class="common-data__tr">
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                            <td class="common-data__th common-data__th_benefit">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__th-title">ARPPU:</span>
+                                    <span class="common-data__th-info">Средний доход с платящего клиента</span>
+                                    <span class="common-data__th-value">р. 5 016</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="common-data__tr">
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                            <td class="common-data__td common-data__td_benefit">
+                                <div class="common-data__td-wrap">
+                                    <span class="common-data__td-title">Количество показов:</span>
+                                    <span class="common-data__td-info">Общее число показов рекламы</span>
+                                    <span class="common-data__td-value">р. 2 500 000</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="churt-rate complex__churt-rate">
+                    <span class="table__title">Расчёт с учетом Churt Rate (Оттока):</span>
+                    <table class="table">
+                        <tr class="table__tr">
+                            <td class="table__th table__td_title">Mесяц</td>
+                            <td class="table__th">1</td>
+                            <td class="table__th">2</td>
+                            <td class="table__th">3</td>
+                            <td class="table__th">4</td>
+                            <td class="table__th">5</td>
+                            <td class="table__th">6</td>
+                            <td class="table__th">7</td>
+                            <td class="table__th">8</td>
+                            <td class="table__th">9</td>
+                            <td class="table__th">10</td>
+                            <td class="table__th">11</td>
+                            <td class="table__th">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Средний чек</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Новые клиенты</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Отток, %</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Повторные продажи</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Всего клиентов</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title table__td_gray">Выручка, Revenue</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Прибыль без fixCOGS</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Чистая прибыль</td>
+                            <td class="table__td table__td_not-profit">1</td>
+                            <td class="table__td table__td_profit">2</td>
+                            <td class="table__td table__td_profit">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                    </table>
+                </div>
+                <div class="retention complex__retention">
+                    <span class="table__title">Расчёт по когорте с учётом Retention (Возвращаемости):</span>
+                    <table class="table">
+                        <tr class="table__tr">
+                            <td class="table__th table__td_title">Mесяц</td>
+                            <td class="table__th">1</td>
+                            <td class="table__th">2</td>
+                            <td class="table__th">3</td>
+                            <td class="table__th">4</td>
+                            <td class="table__th">5</td>
+                            <td class="table__th">6</td>
+                            <td class="table__th">7</td>
+                            <td class="table__th">8</td>
+                            <td class="table__th">9</td>
+                            <td class="table__th">10</td>
+                            <td class="table__th">11</td>
+                            <td class="table__th">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Средний чек</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Retention, Повторные, %</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Новых клиентов</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Старых клиентов</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Выручка, Revenue</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Прибыль без fixCOGS</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Чистая прибыль</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">1</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">2</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">3</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">4</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">5</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">6</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">7</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">8</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">9</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">10</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">11</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">12</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">9</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_title">Всего платящих клиентов</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td">8</td>
+                            <td class="table__td">1415000</td>
+                            <td class="table__td">10</td>
+                            <td class="table__td">11</td>
+                            <td class="table__td">12</td>
+
+                        </tr>
+                    </table>
+                </div>
+                <div class="constant-variables complex__constant-variables">
+                    <span class="table__title">Постоянные и переменные затраты:</span>
+                    <table class="table">
+                        <tr class="table__tr">
+                            <td class="table__th width-18-percent">Отдел маркетинга</td>
+                            <td class="table__th width-10-percent">Количество</td>
+                            <td class="table__th width-18-percent">Зарплата на руки</td>
+                            <td class="table__th width-14-percent">Налоги</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в месяц</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в год</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Таргетолог</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Маркетолог</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Копирайтер</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__th width-18-percent">Управление, бухгалтерия</td>
+                            <td class="table__th width-10-percent">Количество</td>
+                            <td class="table__th width-18-percent">Зарплата на руки</td>
+                            <td class="table__th width-14-percent">Налоги</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в месяц</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в год</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">СЕО</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Бухгалтер</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Юрист</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__th width-18-percent">Разработка</td>
+                            <td class="table__th width-10-percent">Количество</td>
+                            <td class="table__th width-18-percent">Зарплата на руки</td>
+                            <td class="table__th width-14-percent">Налоги</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в месяц</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в год</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Разработчик Android</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Разработчик iOS</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Senior UX/UI designer</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__th width-18-percent">Поддержка</td>
+                            <td class="table__th width-10-percent">Количество</td>
+                            <td class="table__th width-18-percent">Зарплата на руки</td>
+                            <td class="table__th width-14-percent">Налоги</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в месяц</td>
+                            <td class="table__th width-20-percent">Зарплата с налогами в год</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">DevOps</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Product Manager</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Тестировщик</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td class="table__td width-18-percent">р. 30 000</td>
+                            <td class="table__td width-14-percent">р. 12 600</td>
+                            <td class="table__td width-20-percent">р. 42 600</td>
+                            <td class="table__td width-20-percent">р. 681 600</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__th width-18-percent">Сервисы и ПО</td>
+                            <td class="table__th width-10-percent">Количество</td>
+                            <td colspan="2" class="table__th width-32-percent">Затраты в месяц</td>
+                            <td colspan="2" class="table__th width-40-percent">Затраты в год</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Хостинг</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td colspan="2" class="table__td width-32-percent">р. 30 000</td>
+                            <td colspan="2" class="table__td width-40-percent">р. 12 600</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Аренда серверов</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td colspan="2" class="table__td width-32-percent">р. 30 000</td>
+                            <td colspan="2" class="table__td width-40-percent">р. 12 600</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">ПО для бухгалтерии</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td colspan="2" class="table__td width-32-percent">р. 30 000</td>
+                            <td colspan="2" class="table__td width-40-percent">р. 12 600</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__th width-18-percent">Прочее</td>
+                            <td class="table__th width-10-percent">Количество</td>
+                            <td colspan="2" class="table__th width-32-percent">Затраты в месяц</td>
+                            <td colspan="2" class="table__th width-40-percent">Затраты в год</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Аренда офиса</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td colspan="2" class="table__td width-32-percent">р. 30 000</td>
+                            <td colspan="2" class="table__td width-40-percent">р. 12 600</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Коммунальные расходы</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td colspan="2" class="table__td width-32-percent">р. 30 000</td>
+                            <td colspan="2" class="table__td width-40-percent">р. 12 600</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td width-18-percent">Прочие расходы в офис</td>
+                            <td class="table__td width-10-percent">1</td>
+                            <td colspan="2" class="table__td width-32-percent">р. 30 000</td>
+                            <td colspan="2" class="table__td width-40-percent">р. 12 600</td>
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_gray width-18-percent">Итого затраты персонал в месяц</td>
+                            <td class="table__td table__td_gray width-10-percent">р. 5 258 000</td>
+                            <td class="table__td table__td_gray width-18-percent">Итого затраты персонал в год</td>
+                            <td class="table__td table__td_gray width-14-percent">р. 5 258 000</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_gray width-18-percent">Итого затраты прочее в месяц</td>
+                            <td class="table__td table__td_gray width-10-percent">р. 5 258 000</td>
+                            <td class="table__td table__td_gray width-18-percent">Итого затраты прочее в год</td>
+                            <td class="table__td table__td_gray width-14-percent">р. 5 258 000</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_gray width-18-percent">Итого налоги в месяц</td>
+                            <td class="table__td table__td_gray width-10-percent">р. 5 258 000</td>
+                            <td class="table__td table__td_gray width-18-percent">Итого налоги в год</td>
+                            <td class="table__td table__td_gray width-14-percent">р. 5 258 000</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_gray width-18-percent">Итого общие затраты в месяц</td>
+                            <td class="table__td table__td_gray width-10-percent">р. 5 258 000</td>
+                            <td class="table__td table__td_gray width-18-percent">Итого общие затраты в год</td>
+                            <td class="table__td table__td_gray width-14-percent">р. 5 258 000</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="recommendation complex__recommendation">
+                    <span class="recommendation__title">Рекомендации:</span>
+                    <div class="recommendation__input-wrap">
+                        <label for="recommendation-input">
+                            Сколько вы хотите зарабатывать в месяц?
+                        </label>
+                        <div class="recommendation__row">
+                            <input class="main-form__input" type="text" id="recommendation-input" name="recommendation-input" placeholder="р. 10 000 000">
+                            <span>
+                        Укажите сумму чистой прибыли (Profit - fixCOGS), которую <br>
+                        вы хотите зарабатывать в месяц
+                        </span>
+                        </div>
+
+                    </div>
+                    <table class="table recommendation__table">
+                        <tr class="table__tr">
+                            <td class="table__th table__recommendation-title">Ваши данные</td>
+                            <td class="table__th table__recommendation-td">Посетители</td>
+                            <td class="table__th table__recommendation-td">Конверсия</td>
+                            <td class="table__th table__recommendation-td">AvP</td>
+                            <td class="table__th table__recommendation-td">COGS</td>
+                            <td class="table__th table__recommendation-td">CPA</td>
+                            <td class="table__th table__recommendation-td">AC</td>
+                            <td class="table__th table__recommendation-td">CAC</td>
+                            <td class="table__th table__recommendation-profit">Profit - fixCOGS</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__td_gray table__recommendation-title"></td>
+                            <td class="table__td table__td_gray">1</td>
+                            <td class="table__td table__td_gray">2</td>
+                            <td class="table__td table__td_gray">3</td>
+                            <td class="table__td table__td_gray">4</td>
+                            <td class="table__td table__td_gray">5</td>
+                            <td class="table__td table__td_gray">6</td>
+                            <td class="table__td table__td_gray">7</td>
+                            <td class="table__td table__td_gray table__recommendation-profit">р 705 523</td>
+
+
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Посетители, UA</td>
+                            <td class="table__td table__td_recommendation">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Конверсия посетитель в покупатель</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td table__td_recommendation">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Средний чек, AvP</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td table__td_recommendation">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Переменные затраты, COGS</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td table__td_recommendation">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Стоимость лида, CPA</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td table__td_recommendation">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Рекламный бюджет, AC</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td table__td_recommendation">6</td>
+                            <td class="table__td">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                        <tr class="table__tr">
+                            <td class="table__td table__recommendation-title">Стоимость привлечения покупателя, САС</td>
+                            <td class="table__td">1</td>
+                            <td class="table__td">2</td>
+                            <td class="table__td">3</td>
+                            <td class="table__td">4</td>
+                            <td class="table__td">5</td>
+                            <td class="table__td">6</td>
+                            <td class="table__td table__td_recommendation">7</td>
+                            <td class="table__td table__recommendation-profit">8</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</main>
+
+<script src="app.2c2aeeba109374f56f1d.js"></script></body>
+</html>

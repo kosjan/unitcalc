@@ -18,7 +18,6 @@ $(document).ready(function(){
 		for(let j = 0; j<(12-time_now); j++)
 		{
 			$('.mounth_'+j).text(monthA[(new Date().getMonth() + j)])
-			console.log(monthA[(new Date().getMonth() + j)]);
 			time_new_year++;
 		}
 		for(let j = 0; j<time_now; j++)

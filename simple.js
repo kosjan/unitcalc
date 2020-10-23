@@ -198,13 +198,14 @@ $(document).ready(function(){
 
 
 
-		$('#Revenue').text("р. "+ Number ($('.table__td_revenue1').text()));
+		let Revenue = Number($('.table__td_revenue1').text());
+		$('#Revenue').text("р. "+ Revenue.toLocaleString());
 
 		let Revenue_COGS = (Number ($('.table__td_revenue1').text()) - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()));
-		$('#Revenue-COGS').text("р. "+ Revenue_COGS);
+		$('#Revenue-COGS').text("р. "+ Revenue_COGS.toLocaleString());
 		
 		let profit = (Number ($('.table__td_revenue1').text()) - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val()));
-		$('#Profit').text("р. "+ profit );
+		$('#Profit').text("р. "+ profit.toLocaleString());
 			if (profit<0){
 				$('.benefit').removeClass('common-data__th_benefit');
 				$('.benefit').removeClass('common-data__td_not-profit');
@@ -217,42 +218,52 @@ $(document).ready(function(){
 			}
 
 		let Gross_Profit = (Number ($('.table__td_revenue1').text()) - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val()) - Number($('#fix-cogs').val())); 
-		$('#Gross_Profit').text("р. "+ Gross_Profit);
+		$('#Gross_Profit').text("р. "+ Gross_Profit.toLocaleString());
+			if (Gross_Profit<0){
+				$('.benefit_data').removeClass('common-data__th_benefit');
+				$('.benefit_data').removeClass('common-data__td_not-profit');
+				$('.benefit_data').addClass('common-data__td_not-profit');
+			}
+			else {
+				$('.benefit_data').removeClass('common-data__th_benefit');
+				$('.benefit_data').removeClass('common-data__td_not-profit');
+				$('.benefit_data').addClass('common-data__th_benefit');
+			}
 		
 		let ARPPU = Revenue_COGS / Number ($('.table__td_pay1').text());
-		$('#ARPPU').text("р. "+ARPPU);
+		$('#ARPPU').text("р. "+ Math.round(ARPPU).toLocaleString());
 
 		let ARPU =  Revenue_COGS / Number($('#click-count').val());
-		$('#ARPU').text("р. "+ARPU);
+		$('#ARPU').text("р. "+Math.round(ARPU).toLocaleString());
 
 		let LTV = Number (ARPPU) / Number ($('#churn-rate').val()/100); 
-		$('#LTV').text("р. "+ LTV);
+		$('#LTV').text("р. "+ Math.round(LTV).toLocaleString());
 
-		$('#CCPU').text("р. "+ Number($('#marketing-budget').val())/Number ($('.table__td_pay1').text()));
+		$('#CCPU').text("р. "+ Math.round(Number($('#marketing-budget').val())/Number ($('.table__td_pay1').text())).toLocaleString());
 
 		let client = Number($('#click-count').val()) * (Number($('#conversion-transit-trial').val()/100))* (Number($('#conversion-trial-payment').val()/100));
-		$('#Count_of_clients').text(client);
+		$('#Count_of_clients').text(Math.round(client).toLocaleString());
 		
 		let Marg = (Number($('#average-cost-avp').val()) - (Number($('#provision-payment').val())/client) - Number($('#cogs').val())) / Number($('#average-cost-avp').val()) * 100;
 		$('#Marg').text(Marg.toFixed(2) + "%");
 
 		let Count_of_vision = Number($('#marketing-budget').val()) / Number($('#cpm').val()) * 1000;
-		$('#Count_of_vision').text(Count_of_vision);
+		$('#Count_of_vision').text(Math.round(Count_of_vision).toLocaleString());
 
 		let leads = Number($('#click-count').val()) * (Number($('#conversion-transit-trial').val()/100));
-		$('#Count_of_leads').text(leads);
+		$('#Count_of_leads').text(Math.round(leads).toLocaleString());
 
 
 		let CPA = Number($('#marketing-budget').val()) / leads;
-		$('#CPA').text("р. "+CPA);
+		$('#CPA').text("р. "+Math.round(CPA).toLocaleString());
 
 		let ROMI = (Number ($('.table__td_revenue1').text()) - (Number($('#marketing-budget').val()))) / Number($('#marketing-budget').val()) * 100;
 		$('#ROMI').text(ROMI.toFixed(2) + " %");
 
 		let CPC = Number($('#marketing-budget').val()) / Number($('#click-count').val());
-		$('#Count_of_click').text(CPC);
+		$('#Count_of_click').text(Math.round(CPC).toLocaleString());
 
 		let PPPU = - (CPC / (Number($('#conversion-transit-trial').val()/100))/(Number($('#conversion-trial-payment').val()/100))) + (Number($('#average-cost-avp').val()) - (Number($('#provision-payment').val())/client) - Number($('#cogs').val()));
-		$('#PPPU').text("р. "+PPPU);
+		$('#PPPU').text("р. "+Math.round(PPPU).toLocaleString());
 	});
 })

@@ -82,7 +82,6 @@ $(document).ready(function(){
 		for (let i = 1; i < 13; i++) {
 			//console.log(Number($('.table__td_all_client_'+i).text()));
 			var cogs = (Number ($('.table__td_revenue'+ i).text())  - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val())); 
-			cogs = Math.round(cogs);;
 			cogs = Math.round(cogs);
 			//console.log(revenue)
 			$('.table__td_COGS'+ i).text(cogs);
@@ -91,7 +90,6 @@ $(document).ready(function(){
 		for (let i = 1; i < 13; i++) {
 			//console.log(Number($('.table__td_all_client_'+i).text()));
 			var cogs = (Number ($('.table__td_revenue_ret'+ i).text())  - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val())); 
-			cogs = Math.round(cogs);;
 			cogs = Math.round(cogs);
 			//console.log(revenue)
 			$('.table__td_COGS_ret'+ i).text(cogs);
@@ -100,7 +98,6 @@ $(document).ready(function(){
 		for (let i = 2; i < 13; i++) {
 			var retention = 100 - $('#churn-rate').val();
 			retention = Math.round(retention);
-			retention = Math.round(retention);
 			//console.log(revenue)
 			$('.table__td_retention'+ i).text(retention);
 
@@ -108,8 +105,6 @@ $(document).ready(function(){
 		for (let i = 1; i < 13; i++) {
 			//console.log(Number($('.table__td_all_client_'+i).text()));
 			var cogs = (Number ($('.table__td_revenue'+ i).text())  - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val()) - Number($('#fix-cogs').val())); 
-			
-			cogs = Math.round(cogs);;
 			cogs = Math.round(cogs);
 			if (cogs<0){
 				$('.table__td_profi'+ i).removeClass('table__td_not-profit');
@@ -128,7 +123,6 @@ $(document).ready(function(){
 		for (let i = 1; i < 13; i++) {
 			//console.log(Number($('.table__td_all_client_'+i).text()));
 			var cogs = (Number ($('.table__td_revenue_ret'+ i).text()) - Number($('#cogs').val())*Number ($('.table__td_pay1').text())-Number($('#provision-payment').val()) - Number($('#marketing-budget').val()) - Number($('#fix-cogs').val())); 
-			cogs = Math.round(cogs);;
 			cogs = Math.round(cogs);
 			if (cogs<0){
 				$('.table__td_profi_ret'+ i).removeClass('table__td_not-profit');

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Unitcalc - простой расчет</title>
-    <link href="app.bfe59a9229179861540b.css" rel="stylesheet">
+    <link href="app.f5b6e8cd83c50c129923.css" rel="stylesheet">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     </head>
 <body>
@@ -42,9 +42,10 @@
     <hr class="header__hr">
 
 </header>
-<main class="main__simple simple">
+<main class="main__simple simple" isRefresh="simple">
     <div class="container">
         <button class="put-demo-data">Заполнить демо-данными</button>
+        <button class="demo-data-refresh"><img src="./img/refresh.svg" width="10" height="10" alt=""></button>
 
         <form class="main-form" action="">
             <p class="transcript__info">
@@ -63,10 +64,10 @@
                                 </span>
                     </div>
                     <div class="main-form__item">
-                        <label for="click-count">Кол-во кликов:</label>
+                        <label for="click-count">Кол-во кликов (переходов):</label>
                         <input class="main-form__input" id="click-count" type="text" name="click-count" placeholder="8">
                         <span class="main-form__input-info">
-                                    Кол-во кликов по рекламе
+                                    Кол-во кликов по рекламе, т.е. переходов на сайт
                                 </span>
                     </div>
 
@@ -102,7 +103,7 @@
                     </div>
                     <div class="main-form__item">
                         <label for="cogs">Себестоимость:</label>
-                        <input class="main-form__input" id="cogs" type="text" name="cogs" placeholder="р. 500">
+                        <input class="main-form__input" id="cogs" type="text" name="cogs" placeholder="р. 500" depend="production-cost">
                         <span class="main-form__input-info">
                                     Себестоимость 1 единицы товара (Закупка или производство). У сервисов можно ставить 0
                                 </span>
@@ -110,8 +111,8 @@
 
                     <div class="main-form__item">
                         <label for="provision-payment">Затраты на продажи (COGS)</label>
-                        <input class="main-form__input" id="provision-payment" type="text" name="provision-payment" placeholder="р. 120 000">
-                        <span class="main-form__input-info">
+                        <input class="main-form__input" id="provision-payment" type="text" name="provision-payment" placeholder="р. 120 000" depend="cogs">
+                        <span class="main-form__input-info" >
                                     Все затраты на обеспечение продаж. Зарплаты менеджеров, доставка, ПО
                                 </span>
                     </div>
@@ -149,6 +150,7 @@
                 <table class="common-data">
                     <tr class="common-data__tr">
                         <td class="common-data__th">
+                            <div class="table__tooltip tooltip" data-for-depend="revenue production-cost cogs all-clients" tooltip="ARPPU = (Выручка - (Себестоимость * Количество клиентов - COGS)) / Платящие клиенты "></div>
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">ARPPU:</span>
                                 <span class="common-data__th-info">Средний доход с платящего клиента</span>
@@ -156,13 +158,17 @@
                             </div>
                         </td>
                         <td class="common-data__th">
+                            <div class="table__tooltip tooltip" tooltip="LTV = ARPPU / Churn Rate "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">LTV:</span>
                                 <span class="common-data__th-info">Средний доход с клиента за всё время</span>
                                 <span class="common-data__th-value" id="LTV"></span>
                             </div>
                         </td>
-                        <td class="common-data__th">
+                        <td class="common-data__th" depend="revenue">
+                            <div class="table__tooltip tooltip" tooltip="Revenue = Средний чек * Количество покупателей "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">Revenue:</span>
                                 <span class="common-data__th-info">Выручка без учет затрат</span>
@@ -170,6 +176,8 @@
                             </div>
                         </td>
                         <td class="common-data__th">
+                            <div class="table__tooltip tooltip" tooltip="Revenue - COGS = (Выручка - (Себестоимость * Количество клиентов + COGS))"></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">Revenue - COGS:</span>
                                 <span class="common-data__th-info">Выручка с учетом затрат на привлечение клиента</span>
@@ -177,6 +185,8 @@
                             </div>
                         </td>
                         <td class="common-data__th">
+                            <div class="table__tooltip tooltip" tooltip="Margin = (Средний чек - Себестоимость - (COGS / Количество клиентов)) / Средний чек * 100% "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">Margin:</span>
                                 <span class="common-data__th-info">Маржа</span>
@@ -184,6 +194,8 @@
                             </div>
                         </td>
                         <td class="common-data__th">
+                            <div class="table__tooltip tooltip" tooltip="ROMI = (Выручка - Рекламный бюджет) / Рекламный бюджет * 100% "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">ROMI:</span>
                                 <span class="common-data__th-info">Возврат инвестиций в маркетинг</span>
@@ -191,6 +203,8 @@
                             </div>
                         </td>
                         <td class="common-data__th">
+                            <div class="table__tooltip tooltip" tooltip="ARPU = (Выручка - (Себестоимость * Количество клиентов - COGS)) / Посетители (клики, переходы на сайт) "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__th-title">ARPU:</span>
                                 <span class="common-data__th-info">Средний доход с посетителя</span>
@@ -198,22 +212,28 @@
                             </div>
                         </td>
                         <td class="common-data__th benefit">
+                            <div class="table__tooltip tooltip" offset="left" tooltip="Gross Profit = Выручка - Cебестоимость всех продаж - COGS - Рекламный бюджет "></div>
+
                             <div class="common-data__td-wrap">
-                                <span class="common-data__th-title">Profit:</span>
+                                <span class="common-data__th-title">Gross Profit:</span>
                                 <span class="common-data__th-info">Чистая прибыль с рекламы без учета постоянных затрат</span>
                                 <span class="common-data__th-value" id = "Profit"></span>
                             </div>
                         </td>
                     </tr>
                     <tr class="common-data__tr">
-                        <td class="common-data__td">
+                        <td class="common-data__td" >
+                            <div class="table__tooltip tooltip" tooltip="Всего показов рекламы = Рекламный бюджет / Стоимость 1000 показов * 1000 "></div>
+
                             <div class="common-data__td-wrap">
-                                <span class="common-data__td-title">Количество показов:</span>
+                                <span class="common-data__td-title">Всего показов:</span>
                                 <span class="common-data__td-info">Общее число показов рекламы</span>
                                 <span class="common-data__td-value" id = "Count_of_vision"></span>
                             </div>
                         </td>
                         <td class="common-data__td">
+                            <div class="table__tooltip tooltip" tooltip="CPC = Рекламный бюджет / Количество кликов "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__td-title">CPC:</span>
                                 <span class="common-data__td-info">Стоимость клика</span>
@@ -221,6 +241,8 @@
                             </div>
                         </td>
                         <td class="common-data__td">
+                            <div class="table__tooltip tooltip" tooltip="PPPU = Средний чек - Стоимость клиента - Себестоимость - COGS / Количество клиентов "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__td-title">PPPU:</span>
                                 <span class="common-data__td-info">Чистая прибыль с клиента без учета постоянных затрат</span>
@@ -228,20 +250,26 @@
                             </div>
                         </td>
                         <td class="common-data__td">
+                            <div class="table__tooltip tooltip" tooltip="Всего лидов = Количество кликов (переходов) * Конверсию в регистрацию (триал) "></div>
+
                             <div class="common-data__td-wrap">
-                                <span class="common-data__td-title">Кличество лидов:</span>
+                                <span class="common-data__td-title">Всего лидов:</span>
                                 <span class="common-data__td-info">Сколько человек оформили триал</span>
                                 <span class="common-data__td-value" id = "Count_of_leads"></span>
                             </div>
                         </td>
-                        <td class="common-data__td">
+                        <td class="common-data__td" depend="all-clients">
+                            <div class="table__tooltip tooltip" tooltip="Всего клиентов = Количество лидов *  Конверсию в покупку (клиента) "></div>
+
                             <div class="common-data__td-wrap">
-                                <span class="common-data__td-title">Кличество клиентов:</span>
+                                <span class="common-data__td-title">Всего клиентов:</span>
                                 <span class="common-data__td-info">Сколько человек оформили покупку</span>
                                 <span class="common-data__td-value" id = "Count_of_clients"></span>
                             </div>
                         </td>
                         <td class="common-data__td">
+                            <div class="table__tooltip tooltip" tooltip="CPA = Рекламный бюджет / Количество лидов "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__td-title">CPA:</span>
                                 <span class="common-data__td-info">Стоимость лида</span>
@@ -249,6 +277,8 @@
                             </div>
                         </td>
                         <td class="common-data__td">
+                            <div class="table__tooltip tooltip" tooltip="CPPU = Рекламный бюджет / Количество клиентов "></div>
+
                             <div class="common-data__td-wrap">
                                 <span class="common-data__td-title">CPPU:</span>
                                 <span class="common-data__td-info">Стоимость клиента</span>
@@ -256,8 +286,10 @@
                             </div>
                         </td>
                         <td class="common-data__td benefit_data">
+                            <div class="table__tooltip tooltip" offset="left" tooltip="Profit = Выручка - Себестомость всех продаж - COGS - Рекламный бюджет - Постоянные расходы "></div>
+
                             <div class="common-data__td-wrap">
-                                <span class="common-data__td-title">Gross Profit</span>
+                                <span class="common-data__td-title">Profit</span>
                                 <span class="common-data__td-info">Чистая прибыль с рекламы c учетом постоянных затрат</span>
                                 <span class="common-data__td-value" id="Gross_Profit"></span>
                             </div>
@@ -763,5 +795,5 @@
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="simple.js"></script>
-<script src="app.bfe59a9229179861540b.js"></script></body>
+<script src="app.f5b6e8cd83c50c129923.js"></script></body>
 </html>

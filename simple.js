@@ -18,6 +18,7 @@ $(document).ready(function(){
 		for(let j = 0; j<(12-time_now); j++)
 		{
 			$('.mounth_'+j).text(monthA[(new Date().getMonth() + j)])
+			console.log(monthA[(new Date().getMonth() + j)]);
 			time_new_year++;
 		}
 		for(let j = 0; j<time_now; j++)
@@ -227,7 +228,7 @@ $(document).ready(function(){
 		$('#ARPPU').text("р. "+ Math.round(ARPPU).toLocaleString());
 
 		let ARPU =  Revenue_COGS / Number($('#click-count').val());
-		$('#ARPU').text("р. "+Math.round(ARPU).toLocaleString());
+		$('#ARPU').text("р. "+ ARPU.toFixed(1));
 
 		let LTV = Number (ARPPU) / Number ($('#churn-rate').val()/100); 
 		$('#LTV').text("р. "+ Math.round(LTV).toLocaleString());
@@ -237,7 +238,7 @@ $(document).ready(function(){
 		let client = Number($('#click-count').val()) * (Number($('#conversion-transit-trial').val()/100))* (Number($('#conversion-trial-payment').val()/100));
 		$('#Count_of_clients').text(Math.round(client).toLocaleString());
 		
-		let Marg = (Number($('#average-cost-avp').val()) - (Number($('#provision-payment').val())/client) - Number($('#cogs').val())) / Number($('#average-cost-avp').val()) * 100;
+		let Marg = (Number($('#average-cost-avp').val()) - (Number($('#cogs').val()) + (Number($('#provision-payment').val()) / client))) / Number($('#average-cost-avp').val()) * 100;
 		$('#Marg').text(Marg.toFixed(2) + "%");
 
 		let Count_of_vision = Number($('#marketing-budget').val()) / Number($('#cpm').val()) * 1000;
